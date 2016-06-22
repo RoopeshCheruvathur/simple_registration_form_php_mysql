@@ -4,13 +4,13 @@
     if(isset($_POST['username']) && isset($_POST['password'])) {
     $username = strip_tags($_POST['username']);
     $password=md5(strip_tags($_POST['password']));//md5 used for encryption.
-    $repass=md5(strip_tags($_POST['repassword']));//repassword.
+    $repass1=md5(strip_tags($_POST['repassword']));//repassword.
   
     if($username==''){
     header('location:./regstr.php?err_msg=user name cant be empty');
     exit();
     }
-    if(!strcmp($password,$repass)==0) {
+    if(!strcmp($password,$repass1)==0) {
     header('Location:./regstr.php?err_msg=password not match');
     exit();
     }
